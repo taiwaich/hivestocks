@@ -1,0 +1,15 @@
+set hive.exec.mode.local.auto=true;
+--use ${hiveconf:param2}stock;
+--select "highest ${hiveconf:param2} price and date " || open, price_date from stock_prices where open = (select max(open) from stock_prices);
+use applestock;
+select "highest apple ${hiveconf:param2} and date " || ${hiveconf:param2}, price_date from stock_prices where ${hiveconf:param2} = (select max(${hiveconf:param2}) from stock_prices);
+use yahoostock;
+select "highest yahoo ${hiveconf:param2}  and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select max(${hiveconf:param2} ) from stock_prices);
+use twitterstock;
+select "highest twitter ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select max(${hiveconf:param2} ) from stock_prices);
+use nasdaqstock;
+select "highest nasdaq ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select max(${hiveconf:param2} ) from stock_prices);
+use facebookstock;
+select "highest facebook ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select max(${hiveconf:param2} ) from stock_prices);
+use netflixstock;
+select "highest netflix ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select max(${hiveconf:param2} ) from stock_prices);

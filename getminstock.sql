@@ -1,0 +1,15 @@
+set hive.exec.mode.local.auto=true;
+--use ${hiveconf:param2}stock;
+--select "lowest ${hiveconf:param2} price and date " || open, price_date from stock_prices where open = (select min(open) from stock_prices);
+use applestock;
+select "lowest apple ${hiveconf:param2} and date " || ${hiveconf:param2}, price_date from stock_prices where ${hiveconf:param2} = (select min(${hiveconf:param2}) from stock_prices);
+use yahoostock;
+select "lowest yahoo ${hiveconf:param2}  and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select min(${hiveconf:param2} ) from stock_prices);
+use twitterstock;
+select "lowest twitter ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select min(${hiveconf:param2} ) from stock_prices);
+use nasdaqstock;
+select "lowest nasdaq ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select min(${hiveconf:param2} ) from stock_prices);
+use facebookstock;
+select "lowest facebook ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select min(${hiveconf:param2} ) from stock_prices);
+use netflixstock;
+select "lowest netflix ${hiveconf:param2} and date " || ${hiveconf:param2} , price_date from stock_prices where ${hiveconf:param2}  = (select min(${hiveconf:param2} ) from stock_prices);
